@@ -1,0 +1,19 @@
+{
+  "name": "eth-stonks-when",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^4.1.0",
+    "inquirer": "^7.3.3",
+    "node-crypto-api": "^1.0.8",
+    "node-notifier": "^8.0.0",
+    "simple-node-logger": "^18.12.24"
+  }
+}
