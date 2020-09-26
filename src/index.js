@@ -13,7 +13,7 @@ inquirer.prompt([{
             if (test) {
                 return true;
             } else {
-                console.log('Input failed the conversion test, do not enter "0" or a non-numeric value.')
+                console.log(chalk.red.bold('\nInput failed the conversion test, do not enter "0" or a non-numeric value.'))
             }
         }
     }])
@@ -22,10 +22,10 @@ inquirer.prompt([{
         setInterval(() => {
             kraken.ticker('ETH', 'USD')
                 .then(data => {
-                    let currentEthPrice = Number(result.result.XETHZUSD.o) // Gets the price of ETH
+                    let currentEthPrice = Number(data.result.XETHZUSD.o) // Gets the price of ETH
                     let targetEthPrice = Number(answers.targetEthPrice);
 
-                    if (currentEthPrice == targetEthPrice) {
+                    if (currentEthPrice >= targetEthPrice) {
                         notifier.notify({
                                 title: `ETH is Stonks!`,
                                 message: `ETH has reached ${targetEthPrice}!`,
@@ -38,6 +38,8 @@ inquirer.prompt([{
                                 process.exit(0)
                             }
                         );
+                    } else {
+                        console.log('ETH does not meet the critera.');
                     }
                 })
                 .catch(error => {

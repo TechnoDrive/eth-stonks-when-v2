@@ -1,3 +1,2 @@
-npm i
-node src/index.js
+echo "run node src/index.js"
 pause
