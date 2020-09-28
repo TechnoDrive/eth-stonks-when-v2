@@ -1,2 +1,3 @@
-echo "run node src/index.js"
+node src/index.js
 pause
+@echo off
