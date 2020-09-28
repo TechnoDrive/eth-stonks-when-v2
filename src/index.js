@@ -28,7 +28,7 @@ inquirer.prompt([{
                     if (currentEthPrice >= targetEthPrice) {
                         notifier.notify({
                                 title: `ETH is Stonks!`,
-                                message: `ETH has reached ${targetEthPrice}!`,
+                                message: `ETH has reached ${targetEthPrice} USD!`,
                                 appID: 'Made by Hextanium#5890, for salad.io!',
                                 sound: true, // Only Notification Center or Windows Toasters
                                 wait: true // Wait with callback, until user action is taken against notification, does not apply to Windows Toasters as they always wait or notify-send as it does not support the wait option
@@ -39,7 +39,7 @@ inquirer.prompt([{
                             }
                         );
                     } else {
-                        console.log('ETH does not meet the critera.');
+                        console.log(`ETH does not meet the critera of ${targetEthPrice} USD.`);
                     }
                 })
                 .catch(error => {
